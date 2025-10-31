@@ -1,0 +1,132 @@
+body {
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: #1f3b4d;
+  background: linear-gradient(120deg, #cce9ff, #eaf6ff, #ffffff);
+  background-size: 400% 400%;
+  animation: bgChange 6s linear infinite;
+}
+
+@keyframes bgChange {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 🌊 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2a74c9, #5fa8f5);
+  padding: 10px 50px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffe082;
+}
+
+/* 🫀 Form Section */
+.form-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h2 {
+  color: #1f3b4d;
+  margin-bottom: 20px;
+}
+
+.donation-form {
+  background: white;
+  max-width: 550px;
+  margin: auto;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.form-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Cinzel', serif;
+}
+
+input:focus, select:focus {
+  border-color: #2a74c9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(42,116,201,0.3);
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #2a74c9, #5fa8f5);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #1f5dbd, #4b9cf1);
+  transform: scale(1.02);
+}
