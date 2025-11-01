@@ -10,7 +10,7 @@ const nodemailer = require("nodemailer");
 const path = require("path");
 
 const app = express();
-const PORT = 5000;
+const PORT =  process.env.PORT || 5000;
 
 
 
@@ -33,12 +33,10 @@ app.use(express.static(frontendPath));
 console.log("🛠 Connecting to PostgreSQL...");
 
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "lifenest",
-  password: "Ranga@1012",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
 });
+
 
 pool
   .connect()
