@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Donation Form - LifeNest</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+  <div class="logo-container">
+    <img src="logo.jpg" alt="LifeNest Logo" class="logo">
+    <h1 class="logo-text">LIFENEST</h1>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="donors.html">BLOOD DONORS</a></li> <!-- ✅ corrected -->
+      <li><a href="organ-donors.html">ORGAN DONORS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Blood Donation Form -->
+  <div class="form-container">
+    <h2>🩸 Blood Donation Form</h2>
+
+    <form id="bloodForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" required />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="">Select gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="bloodType">Blood Group</label>
+        <select id="bloodType" required>
+          <option value="">Select blood group</option>
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>O+</option>
+          <option>O-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="area">Area</label>
+        <input type="text" id="area" placeholder="Enter your area" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your contact number" required />
+      </div>
+
+      <div class="form-group">
+        <label for="healthIssues">Health Issues (if any)</label>
+        <select id="healthIssues" required>
+          <option value="">Select</option>
+          <option value="sugar">Diabetes</option>
+          <option value="bp">Blood Pressure</option>
+          <option value="aids">AIDS</option>
+          <option value="hiv">HIV</option>
+          <option value="other">Other</option>
+          <option value="none">None</option>
+        </select>
+      </div>
+
+      <button type="submit" id="donateBtn" class="donate-btn">Submit ❤️</button>
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

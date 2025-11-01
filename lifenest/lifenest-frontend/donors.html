@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor List</title>
+  <link rel="stylesheet" href="css/donors.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🩸 Available Blood Donors</h1>
+    <button id="refreshBtn">🔄 Refresh Now</button>
+    
+    <table id="donorsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Blood Group</th>
+          <th>Area</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="3">⏳ Loading donors...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="js/donors.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* 🌿 Page Setup */
+body {
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: #1f3b4d;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(120deg, #cce9ff, #eaf6ff, #ffffff);
+  background-size: 400% 400%;
+  animation: bgChange 6s linear infinite;
+}
+
+/* 🌈 Background Animation */
+@keyframes bgChange {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌿 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+
+.brand {
+  font-size: 26px;
+  font-weight: bold;
+  color: #004d66;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1f3b4d;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #0077b6;
+}
+
+/* 💓 Donor Section */
+.donors-section {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+}
+
+.donors-section h2 {
+  font-size: 28px;
+  color: #004d66;
+  margin-bottom: 30px;
+}
+
+/* 📋 Table Styling */
+table {
+  width: 75%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+thead {
+  background-color: #0077b6;
+  color: white;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 119, 182, 0.1);
+  transition: 0.3s;
+}
+
+.organ-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.organ-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.organ-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.no-data {
+  font-size: 18px;
+  color: #555;
+  padding: 20px;
+}

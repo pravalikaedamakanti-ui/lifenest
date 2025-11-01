@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lifenest | Organ Donors</title>
+  <link rel="stylesheet" href="css/organ-donors.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 🌿 Navbar -->
+  <nav class="navbar">
+    <div class="logo-section">
+      <img src="logo.jpg" alt="Lifenest Logo" class="logo">
+      <span class="brand">Lifenest</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donors.html">Blood Donors</a></li>
+      <li><a href="organ-donors.html" class="active">Organ Donors</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 💓 Organ Donors Section -->
+  <section class="donors-section">
+    <h2>🌿 Registered Organ Donors</h2>
+
+    <table id="donor-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Organ Donated</th>
+          <th>Contact Number</th>
+        </tr>
+      </thead>
+      <tbody id="donor-list">
+        <!-- Donor rows will be added dynamically -->
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    async function loadOrganDonors() {
+      try {
+        const response = await fetch("http://localhost:5000/api/organ/donations");
+        const donors = await response.json();
+
+        const donorList = document.getElementById("donor-list");
+        donorList.innerHTML = "";
+
+        if (!donors || donors.length === 0) {
+          donorList.innerHTML = `
+            <tr><td colspan="3" class="no-data">No organ donors registered yet.</td></tr>
+          `;
+          return;
+        }
+
+        donors.forEach(donor => {
+          let organImage = "";
+
+          switch (donor.organ_type.toLowerCase()) {
+            case "heart":
+              organImage = "https://i.pinimg.com/736x/ee/b9/5e/eeb95e35128c8066e30250fafcfea9c6.jpg";
+              break;
+            case "eyes":
+              organImage = "https://i.pinimg.com/736x/68/14/5b/68145b4d38a1c297429c06265bdec755.jpg";
+              break;
+            case "kidney":
+              organImage = "https://i.pinimg.com/1200x/9c/ee/47/9cee4757a8ab01856f22ae8613573c70.jpg";
+              break;
+            case "liver":
+              organImage = "https://i.pinimg.com/736x/e3/25/1f/e3251ffbddfd4c1f92d4431f59cde0f2.jpg";
+              break;
+            default:
+              organImage = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png";
+          }
+
+          const row = `
+            <tr>
+              <td>${donor.name}</td>
+              <td class="organ-cell">
+                <img src="${organImage}" alt="${donor.organ_type}" class="organ-img">
+                <span>${donor.organ_type}</span>
+              </td>
+              <td>${donor.phone}</td>
+            </tr>
+          `;
+          donorList.innerHTML += row;
+        });
+      } catch (err) {
+        console.error("Error loading donors:", err);
+      }
+    }
+
+    loadOrganDonors();
+  </script>
+</body>
+</html>
